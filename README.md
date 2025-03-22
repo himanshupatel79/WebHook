@@ -7,8 +7,7 @@
 
 # Overview
 
-This application processes webhooks by reading data from a file (`webhooks.txt`), sending requests to specified URLs, and handling retries in case of failures.  
-The implementation includes **exponential backoff** for retry logic and **PHPUnit** tests for validation.
+This application processes webhooks by reading data from a file (`webhooks.txt`), sending requests to specified URLs, and handling retries in case of failures. The implementation includes **exponential backoff** for retry logic and **PHPUnit** tests for validation.
 
 ---
 
@@ -128,6 +127,13 @@ vendor/bin/phpunit CollisionDetectionTest.php
 
 ✅ **Timeout Handling**: Ensures the script exits gracefully if execution time exceeds limits.
 
+
+---
+# Trade-offs
+
+* **Feature** Parallel Processing  **Decision**    Not implemented for simplicity but can be added.
+* **Feature** Database Storage **Decision**   Not used to keep the solution lightweight.
+* **Feature** Third-party Libraries	**Decision**  Avoided to comply with test requirements.
 ---
 
 ## License

@@ -11,11 +11,11 @@
 
 namespace Webhook;
 
-define('MAX_RETRIES', 5);
+define('MAX_RETRIES', 5); // Maximum retry 5 times
 define('MAX_DELAY', 60); // Maximum retry delay of 60 seconds
 define('FAILURE_LIMIT', 5); // Stop sending webhooks to an endpoint after 5 failures
 define('EXECUTION_TIME_LIMIT', 80); // Time limit to process webhooks
-define('WEBHOOK_FILE', 'webhooks.txt');
+define('WEBHOOK_FILE', 'webhooks.txt'); // Used sample webhooks.txt
 
 $failedEndpoints = [];
 $startTime = time();
@@ -94,7 +94,7 @@ function processWebhooks()
 
         list($url, $orderId, $name, $event) = $parts;
         $webhookData = [
-            "order_id" => (int) $orderId,
+            "order_id" => (int)$orderId,
             "name" => $name,
             "event" => $event
         ];
